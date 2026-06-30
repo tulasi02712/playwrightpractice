@@ -14,8 +14,9 @@ const config = {
     // Headed locally, headless in CI.
     headless: false,
     //screenshot: 'on',
-//trace : 'on',
-
+ trace: 'on-first-retry',
+  screenshot: 'only-on-failure',
+  video: 'retain-on-failure',
   }
 };
 
