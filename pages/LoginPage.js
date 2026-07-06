@@ -1,24 +1,58 @@
-class LoginPage{
+class LoginPage {
 
-constructor(page){
-this.page=page;
-this.loginlink=page.locator('#login2');
-this.Username=page.locator('#loginusername');
-this.Password=page.locator('#loginpassword');
-this.LoginButton=page.locator('button:has-text("Log in")'); 
+    constructor(page, context) {
+
+        this.page = page;
+
+        this.context = context;
+
+        this.LoginBtn =
+            page.locator('#loginBtnKn');
+
+    }
+
+    async login(username, password) {
+
+       //EAP await this.page.goto('https://10.25.1.84:8443/authn/');
+
+    await this.page.goto('https://10.25.1.96/authn/')
+        const [newPage] = await Promise.all([
+
+            this.context.waitForEvent('page'),
+
+            this.LoginBtn.click()
+
+        ]);
+
+        await newPage.locator('#nickName')
+            .fill(username);
+
+        await newPage.locator('#dummyPassword')
+            .fill(password);
+
+     //await this.page.pause()
+
+        await newPage
+            .getByRole('button', {
+                name: 'Sign in'
+            })
+            .click();
+
+         await newPage.waitForTimeout(10000);
+
+ /*    console.log(
+        this.context.pages()
+            .map(p=>p.url())
+    );
+
+    console.log(
+        "Current URL:",
+        await newPage.url()
+    );
+ */
+    return newPage; 
 
 }
-async navigateToLoginPage(){
-await this.page.goto('https://www.demoblaze.com/index.html');
-
 }
 
-async Login(username,password){
-    await this.loginlink.click();
-    await this.Username.fill(username);
-    await this.Password.fill(password);
-    await this.LoginButton.click();
-}
-
-}
-module.exports = LoginPage;
+module.exports = { LoginPage };
