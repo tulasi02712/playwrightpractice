@@ -12,7 +12,8 @@ const config = {
   use: {
     browserName: 'chromium',
     // Headed locally, headless in CI.
-    headless: false,
+    //headless: false,
+    headless: process.env.CI ? true : false,
     //screenshot: 'on',
  trace: 'on-first-retry',
   screenshot: 'only-on-failure',
