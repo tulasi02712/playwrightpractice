@@ -12,11 +12,11 @@ const {BillCreationPage}= require('../Pages/BillCreationPage');
     billData,
     orderData,
     budgetData,DCData
-} = require('../Testdata/billData'); 
+} = require('../testdata/billData'); 
 
 const {userData,
     SuperintendentData,
-    DDOData} = require('../Testdata/userData');
+    DDOData} = require('../testdata/userData');
 const {SuperintendentPage} = require('../Pages/SuperIntendentPage');
 const {DDOPage} = require('../Pages/DDOPage');
 const { PrintbillPage } = require('../Pages/PrintbillPage');
