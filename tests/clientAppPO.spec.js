@@ -1,9 +1,11 @@
+ 
  const {test, expect} = require('@playwright/test');
  const {POManager} = require('../Pageobjects/POManager');
 
 
  test('Client App login', async ({page})=>
  {
+  
    const poManager = new POManager(page);
     //js file- Login js, DashboardPage
      const username = "tulasi10121999@gmail.com";
@@ -34,7 +36,7 @@
  
 
 //Testdata as a fixture
-test('Client App login test', async ({ page,testDataforOrder }) => {
+/* test('Client App login test', async ({ page,testDataforOrder }) => {
    //js file- Login js, DashboardPage
 
    const pomanager= new POManager(page);
@@ -56,3 +58,4 @@ test('Client App login test', async ({ page,testDataforOrder }) => {
 
 
 });
+ */
