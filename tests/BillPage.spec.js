@@ -6,7 +6,7 @@ const {RoleSelectionPage} =require('../pages/RoleSelectionPage');
 
 const { HomePage } =require('../pages/HomePage');
 
-const {BillCreationPage}= require('../Pages/BillCreationPage');
+const {BillCreationPage}= require('../pages/BillCreationPage');
 
     const {
     billData,
@@ -17,10 +17,10 @@ const {BillCreationPage}= require('../Pages/BillCreationPage');
 const {userData,
     SuperintendentData,
     DDOData} = require('../testdata/userData');
-const {SuperintendentPage} = require('../Pages/SuperIntendentPage');
-const {DDOPage} = require('../Pages/DDOPage');
-const { PrintbillPage } = require('../Pages/PrintbillPage');
-const { BillsubmissionPage} = require('../Pages/BillsubmissionPage')
+const {SuperintendentPage} = require('../pages/SuperIntendentPage');
+const {DDOPage} = require('../pages/DDOPage');
+const { PrintbillPage } = require('../pages/PrintbillPage');
+const { BillsubmissionPage} = require('../pages/BillsubmissionPage')
 
 test('Create Bill', async ({ page, context }) => {
 

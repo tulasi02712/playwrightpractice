@@ -34,7 +34,7 @@
  
 
 //Testdata as a fixture
-customtest('Client App login test', async ({ page,testDataforOrder }) => {
+test('Client App login test', async ({ page,testDataforOrder }) => {
    //js file- Login js, DashboardPage
 
    const pomanager= new POManager(page);
